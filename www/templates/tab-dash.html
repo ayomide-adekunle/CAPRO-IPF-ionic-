@@ -1,0 +1,64 @@
+<ion-view >
+   <ion-nav-buttons >
+ <img src="img/logo.png" style="height:40px" >
+ <div style="width:250px" ><center style="color:#fff;margin-top:5px"> CAPRO Internation Prayer Focus </center></div>
+ <!-- <i class="icon ion-share nav_icon1" style="color:#fff;margin-top:5px;float:right"  ng-click="next()"></i> -->
+  </ion-nav-buttons>
+  <ion-content class="padding">
+   
+  <div class="contains" ng-if="prayer_previous">
+    
+    <div class="info" id="info1" ng-show="show" ng-if="prayer_previous">
+      <center><h4>{{prayer_previous.title}}</h4></center>
+      <center><p>{{formatDate(prayer_previous.time)}}</p></center>
+      <center ng-if="todayDate==formatDate(prayer_previous.time)"><h6 style="color:#A52A2A;">Today</h6></center>
+    <p >
+      {{formatPrayer(prayer_previous.content)}}
+      <div style="font-size:30px;text-align:center;color:#A52A2A;margin-top:20px">
+      <i class="icon ion-social-whatsapp-outline"  ng-click="sharePrayer(formatDate(prayer_previous.time),formatPrayer(prayer_previous.content))"></i>
+      <i class="icon ion-ios-download-outline" style="margin-left:20px !important" ng-click="savePrayers(prayer_previous)" ></i>
+      </div> 
+      <center style="margin-top:20px" ng-if="todayDate==lastDate">
+         <p>Prayer Out Of Date</p>
+              <button class="button" style="background-color:#A52A2A;color:#fff">GET UPDATE</button>
+          </p>
+      </center>
+      </p>
+
+    </div>
+      </p> 
+    </div>
+    <div class="info" id="info1" ng-show="show1" ng-if="prayer_next">
+      <center><h4>{{prayer_next.title}}</h4></center>
+      <center><p>{{formatDate(prayer_next.time)}}</p></center>
+    <p >
+      {{formatPrayer(prayer_next.content)}}
+    <div style="font-size:30px;text-align:center;color:#A52A2A;margin-top:20px">
+      <i class="icon ion-social-whatsapp-outline"  ng-click="sharePrayer(formatDate(prayer_next.time),formatPrayer(prayer_next.content))" ></i>
+      <i class="icon ion-ios-download-outline" style="margin-left:20px !important" ng-click="savePrayers(prayer_next)" ></i>
+    </div> 
+    <center style="margin-top:20px" ng-if="todayDate==lastDate">
+         <p>Prayer Out Of Date</p>
+              <button class="button" style="background-color:#A52A2A;color:#fff">GET UPDATE</button>
+          </p>
+      </center>
+    </p>
+
+
+    </div>
+    
+    
+
+  </div>
+  
+ 
+  </ion-content>
+  <div class="bar bar-footer"  style=" height:50px;">
+
+    <i class="icon ion-arrow-left-a nav_icon" style="padding-left:5px;margin-bottom:5px" ng-click="previous()" ng-if="present>0"></i>
+    <div style="width:1000px;color:#A52A2A"><center> Navigate through prayers </center></div>
+    <i class="icon ion-arrow-right-a nav_icon" style="padding-left:5px;margin-bottom:5px"  ng-click="next()" ng-if="prayer_length!=present+1"></i>
+    
+  </div> 
+</ion-view>
+

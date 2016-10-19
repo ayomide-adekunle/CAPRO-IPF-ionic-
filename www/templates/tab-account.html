@@ -1,0 +1,17 @@
+<ion-view >
+<ion-nav-buttons >
+ <img src="img/logo.png" style="height:40px" >
+ <div style="width:250px" ><center style="color:#fff;margin-top:5px"> CAPRO Internation Prayer Focus </center></div>
+ <!-- <i class="icon ion-share nav_icon1" style="color:#fff;margin-top:5px;float:right"  ng-click="next()"></i> -->
+  </ion-nav-buttons>
+  <ion-content>
+    <ul class="list">
+    <li class="item" ng-repeat="savedP in CAPRO_prayers_saved" ng-click="goToSavedP(savedP.prayers)">
+      {{savedP.prayers.title}}  <br/>
+      {{formatDate(savedP.prayers.time)}}<br/>
+      
+    </li>
+</ul>
+
+  </ion-content>
+</ion-view>

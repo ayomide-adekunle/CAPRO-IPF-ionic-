@@ -1,0 +1,38 @@
+<ion-view >
+   <ion-nav-buttons >
+ <img src="img/logo.png" style="height:40px" >
+ <div style="width:250px" ><center style="color:#fff;margin-top:5px"> CAPRO Internation Prayer Focus </center></div>
+ <!-- <i class="icon ion-share nav_icon1" style="color:#fff;margin-top:5px;float:right"  ng-click="next()"></i> -->
+  </ion-nav-buttons>
+  <ion-content class="padding">
+   
+  <div class="contains" >
+    
+    <div class="info" id="info1" >
+      <center><h4>{{savedPrayer.title}}</h4></center>
+      <center><p>{{formatDate(savedPrayer.time)}}</p></center>
+    <p >
+      {{formatPrayer(savedPrayer.content)}}
+      <div style="font-size:30px;text-align:center;color:#A52A2A;margin-top:20px;">
+      <i style="color:#A52A2A;margin-top:30px;" ui-sref="tab.account"class="icon ion-android-arrow-back"></i>
+      <i class="icon ion-social-whatsapp-outline"  style="margin-left:40px" ng-click="sharePrayer(formatDate(savedPrayer.time),formatPrayer(savedPrayer.content))"></i>
+      
+      <i  style="margin-left:40px"class="icon ion-ios-trash"></i> 
+      </div> 
+      
+      
+      </p>
+
+    </div>
+      </p> 
+    </div>
+    
+    
+    
+
+  </div>
+ 
+  </ion-content>
+  
+</ion-view>
+
